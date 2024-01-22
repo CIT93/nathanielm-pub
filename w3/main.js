@@ -21,7 +21,6 @@ function determineHouseholdPts(numberInHousehold) {
   myHeading.textContent = `Based on the number of members in a household of ${numberInHousehold}, the points would be ${carbonFootprintPoints}.`;
   return carbonFootprintPoints;
 }
-
 // // const numberInHousehold = 12;
 
 // // global scope
@@ -39,12 +38,13 @@ function determineHouseholdPts(numberInHousehold) {
 // instead of using a numeric value use a string value
 // example: a = largeHouse
 
-
 //Function to determine house size
 
 function determineHouseSize(houseSize) {
   let carbonFootprintPoints = 0;
-  switch (houseSize) {                  // Switch statement inside of function
+  switch (
+    houseSize // Switch statement inside of function
+  ) {
     case "Large House":
     case "large house":
       carbonFootprintPoints = 10;
@@ -81,12 +81,12 @@ function determineHouseSize(houseSize) {
       myHeading2.textContent = `Based on the size of your home, your points would be ${carbonFootprintPoints}.`;
       break;
 
-    default: 
+    default:
       myHeading2.textContent =
         "You must choose either a large house, medium house, small house, or apartment.";
       myHeading3.textContent = `Your total carbon footprint points are ${carbonFootprintPoints}.`;
       console.log(
-        `Your total carbon footprint points are ${carbonFootprintPoints}.`
+        "You must choose either a large house, medium house, small house, or apartment."
       );
   }
   return carbonFootprintPoints; // Return the value of carbonfootprintpoints *must be returned outside of switch statement*
@@ -99,9 +99,9 @@ let carbonFootprintPoints = 0;
 
 // Calling functions and giving them a variable name to add them together
 
-let householdPtsResult = determineHouseholdPts(9); // Calling Number of household members function
+let householdPtsResult = determineHouseholdPts(2); // Calling Number of household members function
 
-let houseSizeResult = determineHouseSize("small house"); // Calling House size function
+let houseSizeResult = determineHouseSize("smal house"); // Calling House size function
 
 let result = houseSizeResult + householdPtsResult; // Adding the points returned after calling each function and storing the total value of points in a variable named "result"
 
