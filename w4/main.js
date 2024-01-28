@@ -38,20 +38,24 @@ function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseholdPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
-  cfpData.push([houseHoldMembers, houseSize, houseHoldPTS, houseSizePTS, total]);
+  cfpData.push([
+    houseHoldMembers,
+    houseSize,
+    houseHoldPTS,
+    houseSizePTS,
+    total,
+  ]);
 }
 
 function displayOutput() {
-
-
+  for (arr of cfpData) {
+    console.log(arr);
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `The total amount of household members is ${arr[0]}. The carbon footprint score for the total amount of household members is ${arr[2]}. The size of the house is ${arr[1]}. The score for the size of the house is ${arr[3]}. The carbon footprint total is ${arr[4]}`;
+    output.appendChild(newP);
+  }
 }
-
-
-
-
-
-
-
 
 start(1, "apt");
 start(2, "large");
@@ -82,8 +86,32 @@ start(7, "medium");
 start(7, "small");
 start(7, "apt");
 
+displayOutput();
 
-displayOutput()
+// figure out a way to update template string to update to reference other data, members of house, size of the house,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
