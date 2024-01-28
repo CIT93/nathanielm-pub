@@ -49,13 +49,20 @@ function start(houseHoldMembers, houseSize) {
 
 function displayOutput() {
   for (arr of cfpData) {
-    console.log(arr);
     const output = document.getElementById("output");
+    const newH2 = document.createElement("h2");
+    newH2.textContent = `Carbon footprint ${arr[4]}`
+    const newH3 = document.createElement("h3");
+    newH3.textContent = `Based on number in and size of home`
     const newP = document.createElement("p");
-    newP.textContent = `The total amount of household members is ${arr[0]}. The carbon footprint score for the total amount of household members is ${arr[2]}. The size of the house is ${arr[1]}. The score for the size of the house is ${arr[3]}. The carbon footprint total is ${arr[4]}`;
+    newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[3]}),`
+    newP.textContent += ` and a ${arr[1]} size of home (score: ${arr[2]}).`
+    output.appendChild(newH2)
+    output.appendChild(newH3)    
     output.appendChild(newP);
   }
 }
+
 
 start(1, "apt");
 start(2, "large");
