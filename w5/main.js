@@ -34,24 +34,24 @@ function determineHouseholdPts(numberInHousehold) {
   return houseHoldPoints;
 }
 
-function displayOutObj(obj) {       // 2. The {displayOutObj} function receives the {cfpObj} object from the {start} function below as a parameter that we named 'obj'
+// function displayOutObj(obj) {       // 2. The {displayOutObj} function receives the {cfpObj} object from the {start} function below as a parameter that we named 'obj'
 
-  console.log(obj);
-  const output = document.getElementById("output");
+//   console.log(obj);
+//   const output = document.getElementById("output");
 
-  const newH2 = document.createElement("h2");
-  newH2.textContent = `Carbon footprint is ${obj.cfpTotal}`; // 3. This means that within the displayOutObj function we can access and manipulate the properties of the cfpObj object using the 'obj' parameter.
-  output.appendChild(newH2);
+//   const newH2 = document.createElement("h2");
+//   newH2.textContent = `Carbon footprint is ${obj.cfpTotal}`; // 3. This means that within the displayOutObj function we can access and manipulate the properties of the cfpObj object using the 'obj' parameter.
+//   output.appendChild(newH2);
 
-  const newH3 = document.createElement("h3");
-  newH3.textContent = `Based on number in and size of home`;
-  output.appendChild(newH3);
+//   const newH3 = document.createElement("h3");
+//   newH3.textContent = `Based on number in and size of home`;
+//   output.appendChild(newH3);
 
-  const newP = document.createElement("p");
-  newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;
-  newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
-  output.appendChild(newP);
-}
+//   const newP = document.createElement("p");
+//   newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;
+//   newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
+//   output.appendChild(newP);
+// }
                                                                                                                                    
 function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseholdPts(houseHoldMembers);
@@ -89,7 +89,7 @@ function displayOutput() {
 
     const newP = document.createElement("p");
     newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;
-    // newP.textContent += ` and a ${arr[1]} size of home (score: ${arr[2]}).`;
+    newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
     output.appendChild(newP);
   }
 }
