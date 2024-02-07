@@ -37,10 +37,14 @@ function determineHouseholdPts(numberInHousehold) {
 }
 
 function start(houseHoldMembers, houseSize) {
+  const firstName = FORM.firstname.value;
+  const lastName = FORM.lastname.value;
   const houseHoldPTS = determineHouseholdPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
+    firstName: firstName,
+    lastName: lastName,
     houseM: houseHoldMembers,
     houseS: houseSize,
     houseMPTS: houseHoldPTS,
@@ -53,6 +57,14 @@ function start(houseHoldMembers, houseSize) {
 function displayOutput() {
   for (obj of cfpData) {
     console.log(obj);
+
+    const newH1 = document.createElement("h1");
+
+    // need to use the values stored in the obj instead of fetching them directly from the form fields so they don't get replaced.
+    newH1.append(`First name: ${obj.firstName}`, document.createElement("br"), `Last name: ${obj.lastName}`
+    );
+
+    OUTPUT.appendChild(newH1);
 
     const newH2 = document.createElement("h2");
     newH2.textContent = `Carbon footprint ${obj.cfpTotal}`;
@@ -78,10 +90,9 @@ FORM.addEventListener("submit", function (e) {
 
   start(houseMembers, houseSize);
   OUTPUT.innerHTML = ""; // This line clears the content of the HTML element with the ID "output." It removes any previous results that might have been displayed.
+
   displayOutput(); // This line calls the displayOutput() function, which iterates over the cfpData array and displays the updated results in the HTML element with the ID "output."
+
   FORM.reset(); // This line resets the form fields to their initial state, clearing the user-input values. It effectively prepares the form for the next submission.
 });
 
-// No the apartment score is not correct because the string names do not match, "apt" and "apartment". We would need to change the <select> value to match the string value in the function determineHouseSizePts.
-
-// We do this work so we know that all options work and can be used as intended which gives us accurate data according to the user input.
