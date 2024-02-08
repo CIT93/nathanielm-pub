@@ -36,15 +36,13 @@ function determineHouseholdPts(numberInHousehold) {
   return houseHoldPoints;
 }
 
-function start(houseHoldMembers, houseSize) {
-  const firstName = FORM.firstname.value;
-  const lastName = FORM.lastname.value;
+function start(first, last, houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseholdPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
-    firstName: firstName,
-    lastName: lastName,
+    firstName: first,
+    lastName: last,
     houseM: houseHoldMembers,
     houseS: houseSize,
     houseMPTS: houseHoldPTS,
@@ -87,8 +85,8 @@ FORM.addEventListener("submit", function (e) {
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.householdmembers.value, 10);
   const houseSize = FORM.houses.value;
-
-  start(houseMembers, houseSize);
+  start(firstName, lastName, houseMembers, houseSize);
+  
   OUTPUT.innerHTML = ""; // This line clears the content of the HTML element with the ID "output." It removes any previous results that might have been displayed.
 
   displayOutput(); // This line calls the displayOutput() function, which iterates over the cfpData array and displays the updated results in the HTML element with the ID "output."
