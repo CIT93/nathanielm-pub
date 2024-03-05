@@ -8,7 +8,11 @@ import { saveLS, cfpData, getLS} from "./storage.js";
 // const submitEl = document.getElementById("submitError");
 
 
-const start = (first, last, houseHoldMembers, houseSize) => {
+const start = (...a) => {
+  const first = a[0];
+  const last = a[1];
+  const houseHoldMembers = a[2];
+  const houseSize = a[3];
   const houseHoldPTS = determineHouseholdPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -22,6 +26,8 @@ const start = (first, last, houseHoldMembers, houseSize) => {
     cfpTotal: total,
   });
 }
+
+
 
 /////Start Here///////
 

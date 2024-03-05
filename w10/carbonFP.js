@@ -1,4 +1,7 @@
-const determineHouseSizePts = size => {
+export const FORM = document.getElementById("form");
+
+
+const determineHouseSizePts = (size = FORM.houseSize.value) => {
   let houseSizePoints = 0;
   if (size === "large") {
     houseSizePoints = 10;
@@ -12,7 +15,7 @@ const determineHouseSizePts = size => {
   return houseSizePoints;
 }
 
-const determineHouseholdPts = numberInHousehold => {
+const determineHouseholdPts = (numberInHousehold = FORM.houseHoldMembers.value) => {
   let houseHoldPoints = 0;
   if (numberInHousehold === 1) {
     houseHoldPoints = 14;
