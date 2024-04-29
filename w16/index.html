@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 12 - Carbon Footprint</title>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Calculating Your Carbon Footprint Points</legend>
+            <div>
+                <label for="">First Name</label>
+                <input type="text" name="firstname" id="firstName" minlength="1" maxlength="20" />
+                <span id="firstNameError" class="error"></span>
+            </div>
+            <div>
+                <label for="">Last Name</label>
+                <input type="text" name="lastname" id="lastName" minlength="1" maxlength="20" />
+                <span id="lastNameError" class="error"></span>
+            </div>
+            <div>
+                <label for="">Count the members of your household</label>
+                <input type="number" name="housem" min="1" max="6" required />
+            </div>
+            <div>
+                <label for="">Consider the size of your home</label>
+                <select name="houses" required>
+                    <option value="">---Please enter size of home---</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div id="foodDiv">
+                <label for="">What do you eat?</label>
+                <select name="food" required>
+                    <option value="">---Please enter what you eat---</option>
+                    <option value="meatDaily">Meat Daily</option>
+                    <option value="meatWeekly">Meat a Few Times a Week</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="veganOrWild">Vegan or Eat Wild Meat Only</option>
+                </select>
+                <div>
+                    <div id="foodTypeDiv">
+                        <label for="foodType">Food Type</label>
+                        <select name="foodSource" id="foodType" required>
+                            <option value="">---Please select food type---</option>
+                            <option value="packed">Prepackaged Convenience Food</option>
+                            <option value="balance">Good Balance of Fresh and Convenience Food</option>
+                            <option value="local">Fresh, Locally Grown, or Hunted Food</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <label for="dishwasherUsage">Dishwasher Usage:</label>
+                <select id="dishwasherUsage" name="dishwasherUsage" required>
+                    <option value="moreThan9">More than 9 times per week</option>
+                    <option value="4To9">4 to 9 times per week</option>
+                    <option value="1To3">1 to 3 times per week</option>
+                    <option value="never">Never</option>
+                </select>
+
+
+                <div>
+                    <label for="washingMachineUsage">Washing Machine Usage:</label>
+                    <select id="washingMachineUsage" name="washingMachineUsage" required>
+                        <option value="moreThan9">More than 9 times per week</option>
+                        <option value="4To9">4 to 9 times per week</option>
+                        <option value="1To3">1 to 3 times per week</option>
+                        <option value="never">Never</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="">Purchases Made Each Year (Furniture, electronics, or other household gadgets):</label>
+                    <select id="purchases" name="purchases" required>
+                        <option value="moreThan7">More than 7 times per year</option>
+                        <option value="5To7">5 to 7 times per year</option>
+                        <option value="3To4">3 to 4 times per year</option>
+                        <option value="1To2">1 to 2 times per year</option>
+                        <option value="never">Never</option>
+                    </select>
+                </div>
+
+
+
+
+                <span id="foodChoiceError" class="error"></span>
+            </div>
+            <button type="submit">Submit</button><br>
+            <span id="submitError" class="error"></span>
+
+
+        </fieldset>
+    </form>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <div id="tab-data">
+        <table id="table-id"></table>
+
+    </div>
+
+</body>
+
+</html>
